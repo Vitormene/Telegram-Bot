@@ -1,0 +1,16 @@
+{
+  "name": "estrelabot",
+  "version": "1.0.0",
+  "description": "BotEstrelaAzul",
+  "main": "index.js",
+  "dependencies": {
+    "formidable": "^1.2.2",
+    "node-telegram-bot-api": "^0.50.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vitor Menezes",
+  "license": "ISC"
+}
