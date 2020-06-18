@@ -1,6 +1,6 @@
 process.env.NTBA_FIX_319 = 1;
 const  TelegramBot  =  require ( 'node-telegram-bot-api' ) ;
-const  token  =  '1184955177:AAF6d5uJ8QAPR5q3TVC0XzwJXV1FrKI2iHc';
+const  token  =  'YOU-TOKEN';
 const bot = new TelegramBot( token, { polling: true } );
 
 bot.onText(/\/start/, (msg) => {
@@ -89,6 +89,7 @@ bot.onText(/\/faleconosco/, (msg)=> {
 })
 bot.onText(/\/caixa/, (msg)=>{
     const url4 = 'https://i.postimg.cc/GtFbG6hT/photo-2020-06-04-13-01-30.jpg';
+<<<<<<< HEAD
     bot.sendPhoto(msg.chat.id, url4, {
         caption: `Está com dúvidas de como funciona?
 Siga o passo a passo!😉`
@@ -106,3 +107,7 @@ Voucher refeição:
     - Sodexo Refeição
     - Ticket Refeição (somente loja 1)`)
 });
+=======
+    bot.sendPhoto(msg.chat.id, url4);
+});
+>>>>>>> ca6aca4b05adc37ea8dae512fbea3c16e7e2d189
