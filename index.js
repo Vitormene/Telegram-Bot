@@ -4,7 +4,8 @@ const  token  =  '1184955177:AAF6d5uJ8QAPR5q3TVC0XzwJXV1FrKI2iHc';
 const bot = new TelegramBot( token, { polling: true } );
 
 bot.onText(/\/start/, (msg) => {
-    bot.sendMessage(msg.chat.id, `Olá ${msg.chat.first_name} ${msg.chat.last_name}, Bem vindo ao Atendente Virtual - Supermercado Estrela Azul.`)
+    bot.sendMessage(msg.chat.id, `Olá ${msg.chat.first_name} ${msg.chat.last_name}, Bem vindo ao Atendente Virtual - Supermercado Estrela Azul.
+     `)
 
 });
 
@@ -15,33 +16,32 @@ bot.onText(/\/endereco/, (msg) => {
 
  
  bot.onText(/\/jornal/, (msg) => {
-    const url = 'http://www.supermercadoestrelaazul.com.br/imagens/tabloide_frente_gd.jpg';
+    const url = "http://www.supermercadoestrelaazul.com.br/video/tabloide_frente_gd.jpg";
     bot.sendPhoto(msg.chat.id, url);
-    const url2 = 'http://www.supermercadoestrelaazul.com.br/imagens/tabloide_verso_gd.jpg';
+    const url2 = "http://www.supermercadoestrelaazul.com.br/video/tabloide_verso_gd.jpg";
     bot.sendPhoto(msg.chat.id, url2);
 
 });
 
 bot.onText(/\/compreeretire/, (msg) => {
-    bot.sendMessage(msg.chat.id, `Compre Online e Retire sua compra em nossas Lojas!\n
-    Para Comprar e Retirar na Loja-1 (Guilhermina):
-    http://drive.supermercadoestrelaazul.com.br/
-    Para Comprar e Retirar na Loja-3 (Ponte Rasa):
-    https://santaluzia.ecommerce.bluesoft.com.br/\n
+const url5 = "http://supermercadoestrelaazul.com.br/video/drive.mp4" 
+bot.sendVideo(msg.chat.id, url5,{
+    caption: `Compre Online e Retire sua compra em nossas Lojas!\n
+Para Comprar e Retirar na Loja-1 (Guilhermina):
+http://drive.supermercadoestrelaazul.com.br/
+Para Comprar e Retirar na Loja-3 (Ponte Rasa):
+https://santaluzia.ecommerce.bluesoft.com.br/\n
 Qual é o Passo a Passo da Compra Online?
 Para efetuar a sua compra é muito fácil! Siga o Passo a Passo:\n
-    1- Acesse o Link e escolha a Loja em que deseja Retirar e Pagar sua compra.
-    2- Antes de fazer as suas compras, clique em ENTRAR e faça seu cadastro.
-    3- Acesse o seu e-mail e confirme o seu cadastro clicando no link.
-    4- Faça o login e seu pedido colocando os produtos desejados no seu carrinho.
-    5- Finalize sua compra clicando no carrinho e aguarde a Separação dos seus produtos
-    6- Aguarde o e-mail do pedido separado com o horário…
-    `
-)
-const url5 = "http://supermercadoestrelaazul.com.br/video/drive.mp4" 
-bot.sendVideo(msg.chat.id, url5);
+1- Acesse o Link e escolha a Loja em que deseja Retirar e Pagar sua compra.
+2- Antes de fazer as suas compras, clique em ENTRAR e faça seu cadastro.
+3- Acesse o seu e-mail e confirme o seu cadastro clicando no link.
+4- Faça o login e seu pedido colocando os produtos desejados no seu carrinho.
+5- Finalize sua compra clicando no carrinho e aguarde a Separação dos seus produtos
+6- Aguarde o e-mail do pedido separado com o horário…
+`   
 });
-
+});
 bot.onText(/\/delivery/, (msg) =>{
     bot.sendMessage(msg.chat.id, `Vocês fazem Delivey?
     \nAs entregas são realizadas somente quando a compra é feita presencialmente... pedimos para que entre em contato com a unidade mais próxima para mais detalhes sobre quais produtos podem ser entregues e valor mínimo de compra.
@@ -49,7 +49,7 @@ bot.onText(/\/delivery/, (msg) =>{
 
 });
 
-bot.onText(/\/horario/, (msg) =>{
+bot.onText(/\/horario/,  (msg) =>{
       bot.sendMessage(msg.chat.id, `Horário de Funcionamento:\n
     ▪ Loja 1 e Loja 2:
     Segunda a Sábado
@@ -69,16 +69,17 @@ bot.onText(/\/horario/, (msg) =>{
 })
 bot.onText(/\/app/, (msg) =>{
     const url4= 'https://i.postimg.cc/907hVKqN/Logotipo-estrela-azul.jpg'
-    bot.sendPhoto(msg.chat.id, url4);
-    bot.sendMessage(msg.chat.id, `😮Mais uma NOVIDADE o APP ESTRELA AZUL DRIVE.🛒
+    bot.sendPhoto(msg.chat.id, url4, {
+    caption: `😮Mais uma NOVIDADE o APP ESTRELA AZUL DRIVE.🛒
 
-    ☑️Conte com mais FACILIDADE no seu dia a dia, 
-    compre pelo APP ESTRELA AZUL DRIVE e
-    Retire sua compra em nossa Loja!✨
-    📲Baixe agora:
-    https://play.google.com/store/apps/details?id=br.com.estrelaazuldrive
-    Para Comprar e Retirar na Loja-1 (Guilhermina)`)
+☑️Conte com mais FACILIDADE no seu dia a dia, 
+compre pelo APP ESTRELA AZUL DRIVE e
+Retire sua compra em nossa Loja!✨
+📲Baixe agora:
+https://play.google.com/store/apps/details?id=br.com.estrelaazuldrive
+Para Comprar e Retirar na Loja-1 (Guilhermina)`
     
+});
 });
 bot.onText(/\/faleconosco/, (msg)=> {
   bot.sendMessage(msg.chat.id, `Fale diretamente com a nossa atendente virtual!\n
@@ -87,8 +88,21 @@ bot.onText(/\/faleconosco/, (msg)=> {
 
 })
 bot.onText(/\/caixa/, (msg)=>{
-    bot.sendMessage(msg.chat.id, `Está com dúvidas de como funciona?
-    Siga o passo a passo!😉`)
     const url4 = 'https://i.postimg.cc/GtFbG6hT/photo-2020-06-04-13-01-30.jpg';
-    bot.sendPhoto(msg.chat.id, url4);
+    bot.sendPhoto(msg.chat.id, url4, {
+        caption: `Está com dúvidas de como funciona?
+Siga o passo a passo!😉`
+});
+});
+bot.onText(/\/voucher/, (msg)=>{
+    bot.sendMessage(msg.chat.id, `
+    Voucher aceitos em nossas unidades:
+Voucher alimentação:
+    - Vr alimentação
+    - Sodexo alimentação
+    - Alelo Alimentação
+    - Ticket Alimentação
+Voucher refeição:
+    - Sodexo Refeição
+    - Ticket Refeição (somente loja 1)`)
 });
