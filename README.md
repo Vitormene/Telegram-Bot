@@ -7,7 +7,7 @@ npm i node-telegram-bot-api
 
 # Uso
 ```
-process.env.NTBA_FIX_319 = 1;/n
+process.env.NTBA_FIX_319 = 1;
 const  TelegramBot  =  require ( 'node-telegram-bot-api' ) ;
 const  token  =  'SEU-TOKEN-DO-BOT-TELEGRAM';
 const bot = new TelegramBot( token, { polling: true } );
